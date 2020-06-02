@@ -53,24 +53,24 @@ This can very simply be integrated in flask back end API.
 ## List of the functions available [last update: 6/1/2020]:
 
 ### prepare_resumable_split(file, todir, chunksize=4194304)
-Split a file into chunks in a directory
-This function is spliting the file into chunks based on the "chunksize" determined in the arguments.
-This function returns:
-     - file_size (int): the overall file size of the file that is needed to appropriately send a resumable file in SharePoint.
-     - partnum (int): the number of the chunks that have been created
-     - chunked_files (list): a list of the file names that have been created
-
-param file: path to the file you want to upload
-param todir: path of the folder where you want the chunks to be temporarorily saved
-param chunksize: size of the chunks (in bytes)
-
+Split a file into chunks in a directory  
+This function is spliting the file into chunks based on the "chunksize" determined in the arguments.  
+This function returns:  
+     - file_size (int): the overall file size of the file that is needed to appropriately send a resumable file in SharePoint.  
+     - partnum (int): the number of the chunks that have been created  
+     - chunked_files (list): a list of the file names that have been created  
+  
+param file: path to the file you want to upload  
+param todir: path of the folder where you want the chunks to be temporarorily saved  
+param chunksize: size of the chunks (in bytes)  
+  
 ### upload_file_resumable(drive, item, file_size, current_bytes, filename, url_first=None, chunk_size=4194304)
-Uploads a resumable file
-This function is an addon to the Library O365 in the sense that it adds the possibility for the user to create a resumable upload of a file. This resumable upload of the file is mandatory when it comes to uploading large files through a web application.
-
-param item: path to the item you want to upload
-param file_size: total size of the file you want to upload
-param current_bytes: size of the chunk that is being uploaded
-param filename: name of the file
-param url: url with ID of the file that is temporarily saved in SharePoint
-param chunksize: size of the chunks (in bytes)
+Uploads a resumable file  
+This function is an addon to the Library O365 in the sense that it adds the possibility for the user to create a resumable upload of a file. This resumable upload of the file is mandatory when it comes to uploading large files through a web application.  
+  
+param item: path to the item you want to upload  
+param file_size: total size of the file you want to upload  
+param current_bytes: size of the chunk that is being uploaded  
+param filename: name of the file  
+param url: url with ID of the file that is temporarily saved in SharePoint  
+param chunksize: size of the chunks (in bytes)  
