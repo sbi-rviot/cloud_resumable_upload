@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name = 'cloud_resumable_upload',
-    version = '0.1.dev0',
+    version = '0.7.dev0',
     author="Renaud Viot",
     author_email="renaud.viot@simply-bi.com",
     description = 'Upload documents from the cloud to the cloud without time out error.',

@@ -1,3 +1,7 @@
+from pathlib import Path
+import os
+
+
 def prepare_resumable_split(file, todir, chunksize=4194304): 
     """ Split a file into chunks in a directory
     This function is spliting the file into chunks based on the "chunksize" determined in the arguments.
@@ -54,7 +58,7 @@ def upload_file_resumable(drive, item, file_size, current_bytes, filename, url_f
     """
     if item is None:
         raise ValueError('Item must be a valid path to file')
-    item = pathlib.Path(item) if not isinstance(item, Path) else item
+    item = Path(item) if not isinstance(item, Path) else item
 
     if not item.exists():
         raise ValueError('Item must exist')
