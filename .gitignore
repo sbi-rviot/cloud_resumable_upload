@@ -1,0 +1,3 @@
+build/*
+dist/*
+cloud_resumable_upload.egg-info/*
